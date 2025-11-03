@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Student Grade Tracker</h1>
+
+        <div class="form-container">
+            <h2>Add Student</h2>
+            <form id="student-form">
+                <input type="text" id="roll" placeholder="Roll No" required>
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="text" id="cls" placeholder="Class" required>
+                <input type="text" id="grade" placeholder="Grade" required>
+                <button type="submit">Add Student</button>
+            </form>
+        </div>
+
+        <div class="search-container">
+            <h2>Find Student</h2>
+            <form id="search-form">
+                <input type="text" id="search-roll" placeholder="Enter Roll No">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <div class="actions-container">
+            <h2>Actions</h2>
+            <button id="sort-btn">Sort by Roll No</button>
+            <button id="topper-btn">Show Toppers</button>
+            <button id="display-all-btn">Display All</button>
+        </div>
+
+        <div class="student-list-container">
+            <h2>Student List</h2>
+            <div id="student-list">
+                <!-- Student records will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
