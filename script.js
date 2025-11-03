@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const studentList = document.getElementById('student-list');
     const searchForm = document.getElementById('search-form');
     const sortBtn = document.getElementById('sort-btn');
+    const sortGradeBtn = document.getElementById('sort-grade-btn');
     const topperBtn = document.getElementById('topper-btn');
     const displayAllBtn = document.getElementById('display-all-btn');
 
@@ -52,6 +53,12 @@ document.addEventListener('DOMContentLoaded', () => {
         students.sort((a, b) => a.roll.localeCompare(b.roll));
         displayAll();
         alert('Student Data sorted by Roll Number!');
+    }
+
+    function sortInfoByGrade() {
+        students.sort((a, b) => a.grade.localeCompare(b.grade));
+        displayAll();
+        alert('Student Data sorted by Grade!');
     }
 
     function showTopper() {
@@ -113,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     sortBtn.addEventListener('click', sortInfo);
+    sortGradeBtn.addEventListener('click', sortInfoByGrade);
     topperBtn.addEventListener('click', showTopper);
     displayAllBtn.addEventListener('click', displayAll);
 
