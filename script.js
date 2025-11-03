@@ -15,12 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
         return students.findIndex(student => student.roll.toLowerCase() === roll.toLowerCase());
     }
 
-    function insertInfo(roll, name, cls, grade) {
+    function insertInfo(roll, name, cls, subject, grade) {
         if (findIndexByRoll(roll) !== -1) {
             alert('The entered roll already exists.');
             return;
         }
-        students.push({ roll, name, cls, grade });
+        students.push({ roll, name, cls, subject, grade });
         displayAll();
         alert(`Data successfully inserted for Roll No: ${roll}`);
     }
@@ -86,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p><strong>Roll No:</strong> ${student.roll}</p>
                     <p><strong>Name:</strong> ${student.name}</p>
                     <p><strong>Class:</strong> ${student.cls}</p>
+                    <p><strong>Subject:</strong> ${student.subject}</p>
                     <p><strong>Grade:</strong> ${student.grade}</p>
                 </div>
                 <button class="delete-btn" data-roll="${student.roll}">Delete</button>
@@ -101,8 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const roll = document.getElementById('roll').value;
         const name = document.getElementById('name').value;
         const cls = document.getElementById('cls').value;
+        const subject = document.getElementById('subject').value;
         const grade = document.getElementById('grade').value;
-        insertInfo(roll, name, cls, grade);
+        insertInfo(roll, name, cls, subject, grade);
         studentForm.reset();
     });
 
